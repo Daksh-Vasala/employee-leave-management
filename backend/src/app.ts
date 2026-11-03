@@ -1,6 +1,7 @@
 import express from "express";
 import { env } from "./config/env";
 import cors from "cors";
+import indexRoutes from "./index.routes";
 
 const app = express();
 
@@ -20,5 +21,7 @@ app.get("/", (_req, res) => {
     message: "Hello from employee-leave-management api !",
   });
 });
+
+app.use("/api/v1", indexRoutes);
 
 export default app;
