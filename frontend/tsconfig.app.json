@@ -22,5 +22,5 @@
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"]
+  "include": ["src", "../later/EmployeeTable.tsx", "../later/StatCard.tsx", "../later/EmployeeForm.tsx", "../later/DashboardLayout.tsx", "../later/Header.tsx", "../later/Sidebar.tsx", "../later/LeaveForm.tsx", "../later/LeaveTable.tsx", "../later/Dashboard.tsx", "../later/Employee.tsx", "../later/Leave.tsx"]
 }
