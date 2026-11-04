@@ -7,21 +7,21 @@ interface ApiResponse<T> {
   data: T;
 }
 
-export const getEmployees = async (): Promise<Employee[]> => {
+export const getEmployees = async (): Promise<ApiResponse<Employee[]>> => {
   const response = await api.get<ApiResponse<Employee[]>>("/employees");
 
-  return response.data.data;
+  return response.data;
 };
 
 export const createEmployee = async (employeeData: {
   name: string;
   email: string;
   department: string;
-}): Promise<Employee> => {
+}): Promise<ApiResponse<Employee>> => {
   const response = await api.post<ApiResponse<Employee>>(
     "/employees",
-    employeeData
+    employeeData,
   );
 
-  return response.data.data;
+  return response.data;
 };

@@ -22,36 +22,35 @@ interface LeaveFilters {
 
 // Get all leave requests with optional filters
 export const getLeaveRequests = async (
-  filters?: LeaveFilters
-): Promise<LeaveRequest[]> => {
+  filters?: LeaveFilters,
+): Promise<ApiResponse<LeaveRequest[]>> => {
   const response = await api.get<ApiResponse<LeaveRequest[]>>("/leaves", {
     params: filters,
   });
 
-  return response.data.data;
+  return response.data;
 };
 
 // Submit a leave request
 export const createLeaveRequest = async (
-  leaveData: CreateLeaveData
-): Promise<LeaveRequest> => {
+  leaveData: CreateLeaveData,
+): Promise<ApiResponse<LeaveRequest>> => {
   const response = await api.post<ApiResponse<LeaveRequest>>(
     "/leaves",
-    leaveData
+    leaveData,
   );
 
-  return response.data.data;
+  return response.data;
 };
 
 // Approve or reject a leave request
 export const updateLeaveStatus = async (
   id: number,
-  status: "approved" | "rejected"
-): Promise<LeaveRequest> => {
-  const response = await api.patch<ApiResponse<LeaveRequest>>(
-    `/leaves/${id}`,
-    { status }
-  );
+  status: "approved" | "rejected",
+): Promise<ApiResponse<LeaveRequest>> => {
+  const response = await api.patch<ApiResponse<LeaveRequest>>(`/leaves/${id}`, {
+    status,
+  });
 
-  return response.data.data;
+  return response.data;
 };

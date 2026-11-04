@@ -74,7 +74,7 @@ export const createEmployee = async (req: Request, res: Response) => {
     if (existingEmail) {
       return res.status(409).json({
         success: false,
-        message: "An employee already exists with this emal",
+        message: "An employee already exists with this email",
       });
     }
 

@@ -7,8 +7,10 @@ interface ApiResponse<T> {
   data: T;
 }
 
-export const getDashboardStats = async (): Promise<DashboardStats> => {
+export const getDashboardStats = async (): Promise<
+  ApiResponse<DashboardStats>
+> => {
   const response = await api.get<ApiResponse<DashboardStats>>("/dashboard");
 
-  return response.data.data;
+  return response.data;
 };

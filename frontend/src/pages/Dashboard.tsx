@@ -18,8 +18,8 @@ function Dashboard() {
     const fetchStats = async () => {
       setIsLoading(true);
       try {
-        const stats = await getDashboardStats();
-        setStats(stats);
+        const res = await getDashboardStats();
+        setStats(res.data);
         console.log(stats);
       } catch (error) {
         console.error(error);
