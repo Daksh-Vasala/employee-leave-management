@@ -1,5 +1,7 @@
+import Layout from "../components/layout/Layout";
+
 function Leaves() {
-  return <>Leaves</>;
+  return <Layout>Leaves</Layout>;
 }
 
 export default Leaves;
