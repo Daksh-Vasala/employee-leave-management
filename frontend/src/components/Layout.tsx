@@ -6,9 +6,10 @@ function Layout({ children }: { children: ReactNode }) {
     <div className="flex min-h-screen bg-slate-50">
       <Sidebar />
 
-      <div className="flex-1">
-
-      <main className="p-8">{children}</main>
+      <div className="min-w-0 flex-1">
+        <main className="p-4 sm:p-6 lg:p-8">
+          {children}
+        </main>
       </div>
     </div>
   );

@@ -12,5 +12,4 @@ export const env = {
   PORT: port,
   DATABASE_URL: databaseUrl,
   CLIENT_URL: process.env.CLIENT_URL || "http://localhost:5173",
-  NODE_ENV: process.env.NODE_ENV || "development",
 };

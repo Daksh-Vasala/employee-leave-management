@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import Layout from "../components/layout/Layout";
+import Layout from "../components/Layout";
 import { toast } from "react-toastify";
 import { getDashboardStats } from "../services/dashboard.service";
 import type { DashboardStats } from "../types";
 import { CheckCircle, Clock, Users } from "lucide-react";
 
-function Dashboard() {
+function DashboardPage() {
   const [isLoading, setIsLoading] = useState(true);
   const [stats, setStats] = useState<DashboardStats>({
     totalEmployees: 0,
@@ -74,7 +74,7 @@ function Dashboard() {
         ) : (
           <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-4">
             {statsCard.map((card) => (
-              <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+              <div key={card.title} className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
                 <div className="flex items-center justify-between">
                   <div>
                     <p className="text-sm font-medium text-slate-500">
@@ -98,4 +98,4 @@ function Dashboard() {
   );
 }
 
-export default Dashboard;
+export default DashboardPage;

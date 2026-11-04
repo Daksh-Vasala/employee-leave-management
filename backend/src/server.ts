@@ -1,4 +1,3 @@
-import e from "cors";
 import app from "./app";
 import { env } from "./config/env";
 import { connectDB } from "./db";
