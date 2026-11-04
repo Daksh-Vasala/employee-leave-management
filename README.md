@@ -110,6 +110,7 @@ git clone https://github.com/Daksh-Vasala/employee-leave-management
 Navigate to the backend directory:
 
 ```bash
+cd employee-leave-management
 cd backend
 npm install
 ```
@@ -157,6 +158,7 @@ http://localhost:3000
 Open another terminal and navigate to the frontend directory:
 
 ```bash
+cd employee-leave-management
 cd frontend
 npm install
 ```
