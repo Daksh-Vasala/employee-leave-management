@@ -33,7 +33,7 @@ function EmployeeFormPage() {
       });
 
       toast.success(res.message || "Employee added successfully");
-      navigate("/employees")
+      navigate("/employees");
     } catch (error) {
       console.error(error);
 
@@ -53,8 +53,12 @@ function EmployeeFormPage() {
   return (
     <Layout>
       <div className="mb-4">
-      <Link to={"/employees"} className="text-sm text-slate-500 cursor-pointer hover:text-slate-700 transition-colors">{'← Back'}</Link>
-
+        <Link
+          to={"/employees"}
+          className="text-sm text-slate-500 cursor-pointer hover:text-slate-700 transition-colors"
+        >
+          {"← Back"}
+        </Link>
       </div>
       <div className="max-w-2xl space-y-6">
         <div>

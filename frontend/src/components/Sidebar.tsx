@@ -12,9 +12,7 @@ function Sidebar() {
   return (
     <aside className="flex min-h-screen w-16 shrink-0 flex-col border-r border-slate-800 bg-slate-950 px-2 py-7 text-white lg:w-64 lg:px-5">
       <div className="flex items-center justify-center gap-3 lg:justify-start">
-        <div className="rounded-lg bg-blue-800 px-2 py-1 font-semibold">
-          LM
-        </div>
+        <div className="rounded-lg bg-blue-800 px-2 py-1 font-semibold">LM</div>
         <h1 className="hidden text-sm font-semibold tracking-tight lg:block">
           Leave Management
         </h1>

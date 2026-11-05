@@ -247,7 +247,7 @@ export const updateLeaveStatus = async (req: Request, res: Response) => {
       });
     }
 
-     // Only pending requests can be updated
+    // Only pending requests can be updated
     if (leaveRequest.status !== "pending") {
       return res.status(400).json({
         success: false,
@@ -255,7 +255,7 @@ export const updateLeaveStatus = async (req: Request, res: Response) => {
       });
     }
 
-     const [updatedLeave] = await db
+    const [updatedLeave] = await db
       .update(leaveRequests)
       .set({
         status,
@@ -269,7 +269,6 @@ export const updateLeaveStatus = async (req: Request, res: Response) => {
       message: "Leave request status updated successfully",
       data: updatedLeave,
     });
-
   } catch (error) {
     console.error("Error in updating leave status: ", error);
     return res.status(500).json({

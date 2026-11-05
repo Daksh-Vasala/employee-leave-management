@@ -20,7 +20,6 @@ function DashboardPage() {
       try {
         const res = await getDashboardStats();
         setStats(res.data);
-        console.log(stats);
       } catch (error) {
         console.error(error);
         toast.error("Something went wrong");
@@ -74,7 +73,10 @@ function DashboardPage() {
         ) : (
           <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-4">
             {statsCard.map((card) => (
-              <div key={card.title} className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+              <div
+                key={card.title}
+                className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm"
+              >
                 <div className="flex items-center justify-between">
                   <div>
                     <p className="text-sm font-medium text-slate-500">
