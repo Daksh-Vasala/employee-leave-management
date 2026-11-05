@@ -48,7 +48,7 @@ A full-stack web application for managing employees and their leave requests. It
 - TypeScript
 - Drizzle ORM
 - Drizzle Kit
-- PostgreSQL
+- PostgreSQL (Neon)
 - dotenv
 - CORS
 
@@ -62,7 +62,8 @@ Employee-Leave-Management/
 │   │   ├── config/
 │   │   ├── controllers/
 │   │   ├── db/
-│   │   │   └── schema/
+│   │   │   ├── schema/
+│   │   │   └── seed.ts
 │   │   ├── routes/
 │   │   ├── services/
 │   │   ├── server.ts
@@ -102,7 +103,8 @@ Make sure you have the following installed:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/Daksh-Vasala/employee-leave-management
+git clone https://github.com/Daksh-Vasala/employee-leave-management.git
+cd employee-leave-management
 ```
 
 ### 2. Backend Setup
@@ -110,7 +112,6 @@ git clone https://github.com/Daksh-Vasala/employee-leave-management
 Navigate to the backend directory:
 
 ```bash
-cd employee-leave-management
 cd backend
 npm install
 ```
@@ -127,19 +128,25 @@ Replace `your_postgresql_connection_string` with your PostgreSQL connection stri
 
 ### 3. Database Setup
 
-Generate the database migrations:
-
-```bash
-npm run db:generate
-```
-
-Run the migrations:
+Run the existing database migrations:
 
 ```bash
 npm run db:migrate
 ```
 
-### 4. Start the Backend Server
+This creates the required database tables and structures.
+
+### 4. Seed Sample Data
+
+Run the following command to insert sample employees and leave requests into the database:
+
+```bash
+npm run db:seed
+```
+
+This adds sample records with different leave statuses for testing the application.
+
+### 5. Start the Backend Server
 
 Run the development server:
 
@@ -153,7 +160,7 @@ The backend server will run at:
 http://localhost:3000
 ```
 
-### 5. Frontend Setup
+### 6. Frontend Setup
 
 Open another terminal and navigate to the frontend directory:
 
@@ -169,7 +176,9 @@ Create a `.env` file inside the `frontend` directory:
 VITE_API_URL=http://localhost:3000/api/v1
 ```
 
-### 6. Start the Frontend
+### 7. Start the Frontend
+
+Run:
 
 ```bash
 npm run dev
@@ -235,3 +244,26 @@ Stores employee leave requests.
 ## Scope
 
 This project focuses on employee and leave management functionality. Authentication and authorization are not included, as they were outside the scope of the assessment.
+
+## Project Status
+
+### Completed Features
+
+- Employee creation and employee listing.
+- Leave request submission and listing.
+- Leave approval and rejection.
+- Filtering leave requests by employee and status.
+- Dashboard statistics.
+- Frontend and backend validation.
+- Prevention of overlapping pending and approved leave requests.
+- PostgreSQL integration using Drizzle ORM.
+- Database migrations and sample data seeding.
+
+### Incomplete Features
+
+- No additional features are planned within the assessment scope.
+
+### Known Issues and Limitations
+
+- Authentication and authorization are not implemented because they were outside the assessment requirements.
+- Concurrent overlapping leave submissions may both succeed because the overlap check and database insertion are separate operations.
