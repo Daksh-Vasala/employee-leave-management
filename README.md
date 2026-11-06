@@ -65,7 +65,6 @@ Employee-Leave-Management/
 │   │   │   ├── schema/
 │   │   │   └── seed.ts
 │   │   ├── routes/
-│   │   ├── services/
 │   │   ├── server.ts
 │   │   └── app.ts
 │   │
